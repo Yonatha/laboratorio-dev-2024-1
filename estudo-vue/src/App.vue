@@ -1,6 +1,13 @@
-<script setup>
+<script >
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Questao2 from '@/components/questoes/Questao2.vue'
+
+export default {
+  components: {
+    Questao2
+  }
+}
 </script>
 
 <template>
@@ -11,12 +18,11 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+         <RouterLink to="/questoes/2">Questão 2</RouterLink>
       </nav>
     </div>
   </header>
-
+  <Questao2/>
   <RouterView />
 </template>
 
