@@ -1,13 +1,13 @@
 <script >
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import Questao2 from '@/components/questoes/Questao2.vue'
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import Questao1 from './components/questoes/Questao1.vue';
+import Questao2 from '@/components/questoes/Questao2.vue'
+import Questao3 from "@/components/questoes/Questao3.vue"
 
  export default {
   components: {
+    Questao3,
     Questao2,
     Questao1
   }
@@ -15,19 +15,12 @@ import Questao1 from './components/questoes/Questao1.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <nav>
+        <RouterLink to="/questao/1">Questão 1</RouterLink>
+        <RouterLink to="/questoes/3">Questão 3</RouterLink>
+        <RouterLink to="/questoes/3">Questão 3</RouterLink>
+  </nav>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-          <RouterLink to="/questao/1">Questão 1</RouterLink> 
-        <RouterLink to="/questoes/2">Questão 2</RouterLink>
-      </nav>
-    </div>
-  </header>
-  <Questao2/>
   <RouterView />
 </template>
 
