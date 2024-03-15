@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Questao1 from '@/components/questoes/Questao1.vue'
 import Questao2 from '@/components/questoes/Questao2.vue'
 
 const router = createRouter({
@@ -16,12 +17,9 @@ const router = createRouter({
       component: Questao2
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: '/questao/1',
+      name: 'questao',
+      component: Questao1 
     }
   ]
 })

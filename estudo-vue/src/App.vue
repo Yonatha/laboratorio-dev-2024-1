@@ -2,10 +2,14 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import Questao2 from '@/components/questoes/Questao2.vue'
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+import Questao1 from './components/questoes/Questao1.vue';
 
-export default {
+ export default {
   components: {
-    Questao2
+    Questao2,
+    Questao1
   }
 }
 </script>
@@ -18,7 +22,8 @@ export default {
       <HelloWorld msg="You did it!" />
 
       <nav>
-         <RouterLink to="/questoes/2">Questão 2</RouterLink>
+          <RouterLink to="/questao/1">Questão 1</RouterLink> 
+        <RouterLink to="/questoes/2">Questão 2</RouterLink>
       </nav>
     </div>
   </header>
