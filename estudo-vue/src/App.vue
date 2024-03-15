@@ -19,6 +19,7 @@ export default {
 
       <nav>
         <RouterLink to="/questoes/3">Questão 3</RouterLink>
+        <RouterLink to="/questoes/4">Questão 4</RouterLink>
       </nav>
     </div>
   </header>

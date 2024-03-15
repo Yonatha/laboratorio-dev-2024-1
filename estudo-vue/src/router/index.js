@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Questao3 from '@/components/questoes/Questao3.vue'
+import Questao4 from '@/components/questoes/Questao4.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/questoes/3',
       name: 'questao-3',
       component: Questao3
+    },
+    {
+      path: '/questoes/4',
+      name: 'questao-4',
+      component: Questao4
     },
     {
       path: '/about',
