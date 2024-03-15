@@ -2,16 +2,19 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import Questao3 from "@/components/questoes/Questao3.vue"
+import Questao1 from './components/questoes/Questao1.vue';
 
 export default {
   components: {
-    Questao3
+    Questao3,
+    Questao1
   }
 }
 </script>
 
 <template>
   <nav>
+        <RouterLink to="/questao/1">Questão 1</RouterLink>
         <RouterLink to="/questoes/3">Questão 3</RouterLink>
   </nav>
 
