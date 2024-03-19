@@ -1,5 +1,4 @@
-<script >
-import { RouterLink, RouterView } from 'vue-router'
+<script>
 import { RouterLink, RouterView } from 'vue-router'
 import Questao1 from './components/questoes/Questao1.vue';
 import Questao2 from '@/components/questoes/Questao2.vue'
@@ -17,7 +16,7 @@ import Questao3 from "@/components/questoes/Questao3.vue"
 <template>
   <nav>
         <RouterLink to="/questao/1">Questão 1</RouterLink>
-        <RouterLink to="/questoes/3">Questão 3</RouterLink>
+        <RouterLink to="/questoes/2">Questão 2</RouterLink>
         <RouterLink to="/questoes/3">Questão 3</RouterLink>
   </nav>
 
