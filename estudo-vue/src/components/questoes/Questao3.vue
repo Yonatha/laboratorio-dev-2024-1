@@ -9,8 +9,8 @@
         <input v-model="descricao" />
         <label>Valor R$</label> <input v-model="valor" />
         <br>
-
-        <button @click="adicioanrConta">Adicionar</button>
+        <button @click="adicioanrConta()">Adicionar</button>
+        <button @click="limparFormulario()">Limpar</button>
         <br>
         <ul>
             <li v-for="conta in contas">
@@ -39,13 +39,13 @@ export default {
     },
     methods: {
         adicioanrConta() {
-            const conta = { descricao: this.descricao, valor: this.valor }
-            this.contas.push(conta)
-            this.limparCamposDeConta()
+            const conta = { descricao: this.descricao, valor: this.valor };
+            this.contas.push(conta);
+            this.limparCamposDeConta();
         },
         limparCamposDeConta() {
-            this.descricao = null
-            this.valor = null
+            this.descricao = null;
+            this.valor = null;
         },
         somarGastos(listaDeContas) {
             let total = 0;
@@ -57,10 +57,15 @@ export default {
         },
         exibirMensagem() {
             if (this.totalgasto <= this.saldoBancario) {
-                this.mensagem = `conseguiu pagar a conta na lanchonete`
+                this.mensagem = `conseguiu pagar a conta na lanchonete`;
             } else {
-                this.mensagem`saldo insuficiente, falta R$ ${saldoFinal},00 para pagar a conta`
+                this.mensagem`saldo insuficiente, falta R$ ${saldoFinal},00 para pagar a conta`;
             }
+        },
+        limparFormulario() {
+            this.nome = null;
+            this.contas = []
+            limparCamposDeConta();
         }
     },
 }
