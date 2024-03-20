@@ -5,19 +5,29 @@
         <label for="">Cliente</label><br>
         <input v-model="nome" />
         <br>
+        <br>
         <label>Descrição Conta</label><br>
         <input v-model="descricao" />
-        <label>Valor R$</label> <input v-model="valor" />
+        <br>
+        <br>
+        <label>Quantidade</label> <br>
+        <input v-model="quantidade" />
+        <br>
+        <br>
+        <label>Valor R$</label> <br>
+        <input v-model="valor" />
+        <br>
         <br>
         <button @click="adicioanrConta()">Adicionar</button>
         <button @click="limparFormulario()">Limpar</button>
         <br>
         <ul>
             <li v-for="conta in contas">
-                {{ conta.descricao }} R$ {{ conta.valor }}
+                {{ conta.descricao }} Qtd {{ conta.quantidade }} R$ {{ conta.valor }} R$ {{ conta.totalParcial }}
             </li>
         </ul>
 
+        <h4>TOTAL R$ {{ total }}</h4>
     </div>
 </template>
 
@@ -34,18 +44,28 @@ export default {
             totalgasto: 0,
             saldoFinal: 0,
             descricao: "",
-            valor: null
+            quantidade: 1,
+            valor: null,
+            total: 0.00
         }
     },
     methods: {
         adicioanrConta() {
-            const conta = { descricao: this.descricao, valor: this.valor };
+            let totalParcial = this.quantidade * this.valor;
+            const conta = {
+                descricao: this.descricao,
+                valor: this.valor,
+                quantidade: this.quantidade,
+                totalParcial
+            };
             this.contas.push(conta);
             this.limparCamposDeConta();
+            this.calcularTotal()
         },
         limparCamposDeConta() {
             this.descricao = null;
             this.valor = null;
+            this.quantidade = 1;
         },
         somarGastos(listaDeContas) {
             let total = 0;
@@ -64,8 +84,11 @@ export default {
         },
         limparFormulario() {
             this.nome = null;
-            this.contas = []
+            this.contas = [];
             limparCamposDeConta();
+        },
+        calcularTotal() {
+            this.total = this.contas.map(conta => conta.totalParcial).reduce((a, c) => a + c, 0);
         }
     },
 }
