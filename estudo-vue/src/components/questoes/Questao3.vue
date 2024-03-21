@@ -88,6 +88,14 @@ export default {
                 this.erros.push('O produto não foi informado')
                 this.formularioValido = false;
             }
+            if (this.valor == null) {
+                this.erros.push('O valor não foi informado')
+                this.formularioValido = false;
+            }
+            if (this.quantidade == 0) {
+                this.erros.push('A quantidade não foi informada')
+                this.formularioValido = false;
+            }
 
             return this.formularioValido;
         },
