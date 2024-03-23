@@ -3,12 +3,14 @@ import { RouterLink, RouterView } from 'vue-router'
 import Questao1 from './components/questoes/Questao1.vue';
 import Questao2 from '@/components/questoes/Questao2.vue'
 import Questao3 from "@/components/questoes/Questao3.vue"
+import Questao4 from './components/questoes/Questao4.vue';
 
  export default {
   components: {
     Questao3,
     Questao2,
-    Questao1
+    Questao1,
+    Questao4
   }
 }
 </script>
@@ -18,6 +20,7 @@ import Questao3 from "@/components/questoes/Questao3.vue"
         <RouterLink to="/questao/1">Questão 1</RouterLink>
         <RouterLink to="/questoes/2">Questão 2</RouterLink>
         <RouterLink to="/questoes/3">Questão 3</RouterLink>
+        <RouterLink to="/questao/4">Questão 4</RouterLink>
   </nav>
 
   <RouterView />
