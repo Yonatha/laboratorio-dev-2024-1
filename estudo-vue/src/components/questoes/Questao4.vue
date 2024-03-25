@@ -1,6 +1,20 @@
 <template>
     <div>
         <h2>Questão 4</h2>
+        <label>Nome</label><br>
+        <input v-model="nome"><br><br>
+
+        <label>Frutas </label>
+        <input v-model="fruta"> 
+        
+        <label> Quantidade </label>
+        <input v-model="und">
+
+        <label> Preço </label>
+        <input v-model="preco">
+
+        <br><br>
+        <button>Adicionar</button>  <button>Finalizar</button>
     </div>
 </template>
 
@@ -13,7 +27,8 @@ export default {
             und: "",
             preco: null,
             sacola: [],            
-            valorTotal: null
+            valorTotal: null,
+            resultado: false
         }
     },
     methods: {
