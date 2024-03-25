@@ -8,6 +8,7 @@ import Questao5 from '@/components/questoes/Questao5.vue'
 import Questao6 from '@/components/questoes/Questao6.vue'
 import Questao7 from '@/components/questoes/Questao7.vue'
 import Questao8 from '@/components/questoes/Questao8.vue'
+import Questao9 from '@/components/questoes/Questao9.vue'
 
 
  export default {
@@ -19,7 +20,8 @@ import Questao8 from '@/components/questoes/Questao8.vue'
     Questao5,
     Questao6,
     Questao7,
-    Questao8
+    Questao8,
+    Questao9
   }
 }
 </script>
@@ -34,6 +36,7 @@ import Questao8 from '@/components/questoes/Questao8.vue'
         <RouterLink to="/questao/6">Questão 6</RouterLink>
         <RouterLink to="/questao/7">Questão 7</RouterLink>
         <RouterLink to="/questao/8">Questão 8</RouterLink>
+        <RouterLink to="/questao/9">Questão 9</RouterLink>
   </nav>
 
   <RouterView />

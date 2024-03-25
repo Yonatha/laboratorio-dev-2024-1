@@ -8,6 +8,7 @@ import Questao5 from '@/components/questoes/Questao5.vue'
 import Questao6 from '@/components/questoes/Questao6.vue'
 import Questao7 from '@/components/questoes/Questao7.vue'
 import Questao8 from '@/components/questoes/Questao8.vue'
+import Questao9 from '@/components/questoes/Questao9.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +57,11 @@ const router = createRouter({
       path: '/questao/8',
       name: 'questao-8',
       component: Questao8
+    },
+    {
+      path: '/questao/9',
+      name: 'questao-9',
+      component: Questao9
     }
   ]
 })
