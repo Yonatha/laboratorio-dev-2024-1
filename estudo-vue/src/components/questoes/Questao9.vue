@@ -35,6 +35,12 @@
 
         <ul>
             <li v-for="filme in filmesFavoritos">
+
+                <p :class="filme.situacao">
+                    {{ filme.situacao }}
+                </p>
+                
+
                 <img v-if="filme.capa" :src="`${BASE_URL}/${filme.capa}`">
 
                 <div v-else class="imagem-nao-localizada">
@@ -75,22 +81,26 @@ export default {
                 {
                     codigo: 1,
                     titulo: "golpe baixo",
-                    capa: "1.jpg"
+                    capa: "1.jpg",
+                    situacao: "Habilitado"
                 },
                 {
                     codigo: 2,
                     titulo: "voando alto",
-                    capa: "2.jpg"
+                    capa: "2.jpg",
+                    situacao: "Cancelado"
                 },
                 {
                     codigo: 3,
                     titulo: "velozes e furiosos",
-                    capa: "3.jpg"
+                    capa: "3.jpg",
+                    situacao: "Habilitado"
                 },
                 {
                     codigo: 4,
                     titulo: "vingadores",
-                    capa: null
+                    capa: null,
+                    situacao: "Arquivado"
                 },
             ]
         }
@@ -106,7 +116,8 @@ export default {
                     codigo: this.filmesFavoritos.length + 1,
                     titulo: this.novoFilme,
                     capa: null,
-                    genero: this.generoSelecionado
+                    genero: this.generoSelecionado,
+                    situacao: this.situacaoSelecionada
                 }
 
                 const encontrado = this.filmesFavoritos.filter(f => f.titulo == this.novoFilme)
@@ -137,7 +148,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 body {
     font-family: Arial;
 }
@@ -153,23 +164,41 @@ label {
 .imagem-nao-localizada h3 {
     color: #ffffff;
     text-align: center;
-    line-height: 300px;
+    line-height: 250px;
     font-size: 14px;
+}
+
+.imagem-nao-localizada {
+    position: absolute;
+
 }
 
 .imagem-nao-localizada,
 ul li img {
-    width: 25%;
-    height: 25%;
+    width: 100%;
+    height: 100%;
 }
 
 ul li {
     list-style: none;
+    width: 192px;
+    height: 263px;
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+    margin-right: 5px;
 }
 
 ul li span.titulo {
     text-transform: uppercase;
     font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #000000;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
 }
 
 .sucesso {
@@ -181,14 +210,38 @@ ul li span.titulo {
 }
 
 #btnAdicionarFilme {
-    background: green;
-    color: #ffffff;
-    border: none;
+    border-radius: 26px;
     width: 100px;
     height: 28px;
+    color: #ffffff;
+    background: green;
+    border: none;
     margin-top: 8px;
-    border-radius: 26px;
     cursor: pointer;
+}
+
+.Habilitado,
+.Cancelado,
+.Arquivado {
+    color: #ffffff;
+    position: absolute;
+    right: 5px;
+    z-index: 2;
+    text-transform: uppercase;
+    font-size: 9px;
+    padding: 3px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+}
+
+.Habilitado {
+    background: green;
+}
+.Cancelado {
+    background: red;
+}
+.Arquivado {
+    background: rgb(99, 98, 98);
 }
 
 </style>
